@@ -3,7 +3,8 @@ function sendData(){
 xhr.open("GET","data.php?name=moneruzzaman&age=40",true);
 xhr.onreadystatechange = function(){
     if(this.readyState===4 && this.status===200){
-        console.log(this.responseText);
+    document.getElementById('result').innerHTML = this.responseText;
+
 
         let response = JSON.parse(this.responseText);
         console.log(response.result);
